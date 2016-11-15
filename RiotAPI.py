@@ -35,5 +35,12 @@ class RiotAPI(object):
             version = Consts.API_VERSIONS['summoner'],
             summonerids = id
         )
-        return self._request(api_url) 
+        return self._request(api_url)
+
+    def get_summoner_masteries(self, id):
+        api_url = Consts.URL['summoner_masteries'].format(
+            version = Consts.API_VERSIONS['summoner'],
+            summonerids = id
+        )
+        return self._request(api_url)
  
