@@ -3,7 +3,7 @@ URL = {
     'summoner_by_name': 'v{version}/summoner/by-name/{names}',
     'summoner_id': 'v{version}/summoner/{summonerids}',
     'summoner_masteries': 'v{version}/summoner/{summonerids}/masteries',
-    'game': 'v{version}/game/by-summoner/{summonerid}/recent
+    'game': 'v{version}/game/by-summoner/{summonerids}/recent'
 }
 
 API_VERSIONS = {
