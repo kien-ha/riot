@@ -6,7 +6,8 @@ URL = {
 }
 
 API_VERSIONS = {
-    'summoner': '1.4'
+    'summoner': '1.4',
+    'game': '1.3'
 }
 
 REGIONS = {
