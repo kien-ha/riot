@@ -23,21 +23,21 @@ class RiotAPI(object):
         # print(response.url)
         return response.json()
 
-    def get_summoner_by_name(self, name):
+    def summoner_by_name(self, name):
         api_url = Consts.URL['summoner_by_name'].format(
             version = Consts.API_VERSIONS['summoner'],
             names = name
         )
         return self._request(api_url)
 
-    def get_summoner_id(self, id):
+    def summoner_id(self, id):
         api_url = Consts.URL['summoner_id'].format(
             version = Consts.API_VERSIONS['summoner'],
             summonerids = id
         )
         return self._request(api_url)
 
-    def get_summoner_masteries(self, id):
+    def summoner_masteries(self, id):
         api_url = Consts.URL['summoner_masteries'].format(
             version = Consts.API_VERSIONS['summoner'],
             summonerids = id
