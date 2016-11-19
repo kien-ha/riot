@@ -43,4 +43,11 @@ class RiotAPI(object):
             summonerids = id
         )
         return self._request(api_url)
+
+    def summoner_game(self, id):
+        api_url = Consts.URL['game'].format(
+            version = Consts.API_VERSIONS['game'],
+            summonerids = id
+        )
+        return self._request(api_url)
  
