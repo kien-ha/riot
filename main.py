@@ -18,12 +18,10 @@ def main():
     ward_count = 0
     for d in ward_place:
         #print(d)
-        if d['stats']:
-            #print(d['stats'])
-            if d['stats']['wardPlaced']:
-                number_of_games += 1
-                #print(d['stats']['wardPlaced'])
-                ward_count += d['stats']['wardPlaced']
+        if d['stats']['wardPlaced']:
+            number_of_games += 1
+            #print(d['stats']['wardPlaced'])
+            ward_count += d['stats']['wardPlaced']
     print('Number of games taken into account is', number_of_games)
     print('Ward count is', ward_count, 'over', number_of_games, 'games.')
     average_ward_count = ward_count / number_of_games
