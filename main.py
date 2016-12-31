@@ -16,16 +16,24 @@ def main():
     #print(ward_place)
     number_of_games = 0
     ward_count = 0
+    list_of_game_stats = []
     for d in ward_place:
         #print(d)
         if d['stats']['wardPlaced']:
             number_of_games += 1
             #print(d['stats']['wardPlaced'])
             ward_count += d['stats']['wardPlaced']
+            game_dict = {
+                'game_number': number_of_games,
+                'ward_in_game': d['stats']['wardPlaced']
+            }
+            list_of_game_stats.append(game_dict)
     print('Number of games taken into account is', number_of_games)
     print('Ward count is', ward_count, 'over', number_of_games, 'games.')
     average_ward_count = ward_count / number_of_games
     print('Average ward count is', average_ward_count)
+    for k in list_of_game_stats:
+        print('Game number:', k['game_number'], 'Wards placed:', k['ward_in_game'])
 
 if __name__ == "__main__":
     main()
