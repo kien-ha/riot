@@ -23,11 +23,11 @@ def main():
             number_of_games += 1
             #print(d['stats']['wardPlaced'])
             ward_count += d['stats']['wardPlaced']
-            game_dict = {
+            game_stats = {
                 'game_number': number_of_games,
                 'ward_in_game': d['stats']['wardPlaced']
             }
-            list_of_game_stats.append(game_dict)
+            list_of_game_stats.append(game_stats)
     print('Number of games taken into account is', number_of_games)
     print('Ward count is', ward_count, 'over', number_of_games, 'games.')
     average_ward_count = ward_count / number_of_games
