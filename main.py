@@ -3,6 +3,7 @@ import functools
 import plotly as py
 from plotly.graph_objs import Pie, Layout
 
+
 def main():
     api = RiotAPI('RGAPI-be85ef47-a17a-49d7-a453-587388a74d74')
     reference = api.summoner_by_name('Shijou Kurumi')
@@ -43,9 +44,9 @@ def main():
         secs = int(((time_played / 60) - mins) * 60)
         wards_per_min = float("{0:.2f}".format(k['ward_placed'] / mins))
         print('Game number:', k['game_number'], 'Game sub type:',
-            k['game_sub_type'], 'Wards placed:', k['ward_placed'],
-            'Wards per min:', wards_per_min, 'Game time:', mins, 'mins', secs,
-            'secs', 'Victory:', k['win'])
+              k['game_sub_type'], 'Wards placed:', k['ward_placed'],
+              'Wards per min:', wards_per_min, 'Game time:', mins, 'mins',
+              secs, 'secs', 'Victory:', k['win'])
 
     """
     py.offline.plot({
