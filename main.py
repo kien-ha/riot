@@ -29,7 +29,5 @@ def main():
     average_ward_count = ward_count / number_of_games
     print('Average ward count is', average_ward_count)
 
-    #print(functools.reduce(lambda r, d: r.update(d) or r, ward_place, {}))
-
 if __name__ == "__main__":
     main()
