@@ -40,9 +40,11 @@ def main():
         time_played = k['time_played']
         mins = int(time_played / 60)
         secs = int(((time_played / 60) - mins) * 60)
+        wards_per_min = float("{0:.2f}".format(k['ward_placed'] / mins))
         print('Game number:', k['game_number'], 'Game sub type:',
             k['game_sub_type'], 'Wards placed:', k['ward_placed'],
-            'Game time:', mins, 'mins', secs, 'secs')
+            'Wards per min:', wards_per_min, 'Game time:', mins, 'mins', secs,
+            'secs')
 
     """
     py.offline.plot({
