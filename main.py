@@ -14,21 +14,21 @@ def main():
     print(summoner_id)
 
     game = api.summoner_game(summoner_id)
-    ward_place = game["games"]
+    games = game["games"]
     # print(ward_place)
     number_of_games = 0
     ward_count = 0
     list_of_game_stats = []
-    for d in ward_place:
+    for match in games:
         # print(d)
-        if d['stats']['wardPlaced']:
+        if match['stats']['wardPlaced']:
             number_of_games += 1
             # print(d['stats']['wardPlaced'])
-            ward_count += d['stats']['wardPlaced']
+            ward_count += match['stats']['wardPlaced']
             game_stats = {
                 'game_number': number_of_games,
-                'ward_in_game': d['stats']['wardPlaced'],
-                'time_played': d['stats']['timePlayed']
+                'ward_in_game': match['stats']['wardPlaced'],
+                'time_played': match['stats']['timePlayed']
             }
             list_of_game_stats.append(game_stats)
     print('Number of games taken into account is', number_of_games)
