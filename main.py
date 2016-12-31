@@ -8,16 +8,9 @@ def main():
     sub_reference = reference['shijoukurumi']
     summoner_name = sub_reference['name']
     summoner_id = sub_reference['id']
-
     print(summoner_name)
     print(summoner_id)
-    """print(hasattr(summoner_name, 'name'))
 
-    test_summoner_id = api.summoner_id(summoner_id)
-    #print(test_summoner_id)
-    summoner_masteries = api.summoner_masteries(summoner_id)
-    #print(summoner_masteries['19051484']['pages'])
-    """
     game = api.summoner_game(summoner_id)
     ward_place = game["games"]
     #print(ward_place)
