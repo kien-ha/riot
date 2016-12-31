@@ -27,8 +27,9 @@ def main():
             ward_count += match['stats']['wardPlaced']
             game_stats = {
                 'game_number': number_of_games,
+                'game_sub_type': match['subType'],
                 'ward_placed': match['stats']['wardPlaced'],
-                'time_played': match['stats']['timePlayed'],
+                'time_played': match['stats']['timePlayed']
             }
             list_of_game_stats.append(game_stats)
     print('Number of games taken into account is', number_of_games)
@@ -36,8 +37,12 @@ def main():
     average_ward_count = ward_count / number_of_games
     print('Average ward count is', average_ward_count)
     for k in list_of_game_stats:
-        print('Game number:', k['game_number'], 'Wards placed:',
-              k['ward_placed'], 'Game time', k['time_played'])
+        time_played = k['time_played']
+        mins = int(time_played / 60)
+        secs = int(((time_played / 60) - mins) * 60)
+        print('Game number:', k['game_number'], 'Game sub type:',
+            k['game_sub_type'], 'Wards placed:', k['ward_placed'],
+            'Game time:', mins, 'mins', secs, 'secs')
 
     """
     py.offline.plot({
