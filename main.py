@@ -14,19 +14,19 @@ def main():
     game = api.summoner_game(summoner_id)
     ward_place = game["games"]
     #print(ward_place)
-    count = 0
+    number_of_games = 0
     ward_count = 0
     for d in ward_place:
         #print(d)
         if d['stats']:
             #print(d['stats'])
             if d['stats']['wardPlaced']:
-                count += 1
+                number_of_games += 1
                 #print(d['stats']['wardPlaced'])
                 ward_count += d['stats']['wardPlaced']
-    print('count is', count)
-    print('Ward count is', ward_count, 'over', count, 'games.')
-    average_ward_count = ward_count / count
+    print('Number of games taken into account is', number_of_games)
+    print('Ward count is', ward_count, 'over', number_of_games, 'games.')
+    average_ward_count = ward_count / number_of_games
     print('Average ward count is', average_ward_count)
 
     #print(functools.reduce(lambda r, d: r.update(d) or r, ward_place, {}))
