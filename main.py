@@ -1,6 +1,7 @@
 from RiotAPI import RiotAPI
 import functools
-
+import plotly as py
+from plotly.graph_objs import Pie, Layout
 
 def main():
     api = RiotAPI('RGAPI-be85ef47-a17a-49d7-a453-587388a74d74')
@@ -36,6 +37,17 @@ def main():
     for k in list_of_game_stats:
         print('Game number:', k['game_number'], 'Wards placed:',
               k['ward_in_game'])
+
+
+
+    py.offline.plot({
+        'data': [{
+              'labels': [summoner_name, 'player 2'],
+              'values': [average_ward_count, 50],
+              'type': 'pie'}],
+
+        'layout': {'title': 'Hello World!'}
+    })
 
 if __name__ == "__main__":
     main()
