@@ -29,7 +29,8 @@ def main():
                 'game_number': number_of_games,
                 'game_sub_type': match['subType'],
                 'ward_placed': match['stats']['wardPlaced'],
-                'time_played': match['stats']['timePlayed']
+                'time_played': match['stats']['timePlayed'],
+                'win': match['stats']['win']
             }
             list_of_game_stats.append(game_stats)
     print('Number of games taken into account is', number_of_games)
@@ -44,7 +45,7 @@ def main():
         print('Game number:', k['game_number'], 'Game sub type:',
             k['game_sub_type'], 'Wards placed:', k['ward_placed'],
             'Wards per min:', wards_per_min, 'Game time:', mins, 'mins', secs,
-            'secs')
+            'secs', 'Victory:', k['win'])
 
     """
     py.offline.plot({
