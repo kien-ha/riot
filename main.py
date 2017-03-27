@@ -6,9 +6,9 @@ from plotly.graph_objs import Pie, Layout
 
 def main():
     api = RiotAPI('RGAPI-be85ef47-a17a-49d7-a453-587388a74d74')
-    reference = api.summoner_by_name('Shijou Kurumi')
-    print(reference['shijoukurumi'])
-    sub_reference = reference['shijoukurumi']
+    reference = api.summoner_by_name('Takao Haruko')
+    print(reference['takaoharuko'])
+    sub_reference = reference['takaoharuko']
     summoner_name = sub_reference['name']
     summoner_id = sub_reference['id']
     print(summoner_name)
